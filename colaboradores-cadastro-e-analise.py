@@ -1,6 +1,11 @@
 colaboradores = []
 pessoa = {}
 media = soma = 0
+
+def lin():
+    print('-=' * 30)
+
+
 while True:
     pessoa.clear()
     pessoa['nome'] = str(input('Nome: '))
@@ -19,15 +24,17 @@ while True:
         print('ERRO! Responda apenas S ou N ')
     if resp == 'N':
         break
-print('-=' * 30)
+lin()
 print(f'Ao todo temos {len(colaboradores)} pessoas cadastradas.')
 media = soma / len(colaboradores)
+lin()
 print(f'A média de idades das pessoas cadastradas é: {media:5.2f} anos')
 print(f'As mulheres cadastradas foram: ', end='')
 for p in colaboradores:
     if p['sexo'] in 'Ff':
         print(f'({p['nome']}) ', end='')
 print()
+lin()
 print('Lista de pessoas que estão acima da média de idade: ', end='')
 for p in colaboradores:
     if p['idade'] >= media:
