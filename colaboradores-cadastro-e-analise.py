@@ -25,17 +25,17 @@ while True:
     if resp == 'N':
         break
 lin()
-print(f'Ao todo temos {len(colaboradores)} pessoas cadastradas.')
+print(f'Ao todo temos {len(colaboradores)} colaboradores cadastradas.')
 media = soma / len(colaboradores)
 lin()
-print(f'A média de idades das pessoas cadastradas é: {media:5.2f} anos')
-print(f'As mulheres cadastradas foram: ', end='')
+print(f'A média de idades dos colaboradores cadastradas é: {media:5.2f} anos')
+print(f'As mulheres cadastradas são: ', end='')
 for p in colaboradores:
     if p['sexo'] in 'Ff':
         print(f'({p['nome']}) ', end='')
 print()
 lin()
-print('Lista de pessoas que estão acima da média de idade: ', end='')
+print('Lista de colaboradores que estão acima da média de idade: ', end='')
 for p in colaboradores:
     if p['idade'] >= media:
         print(f'({p['nome']}) ', end='')
