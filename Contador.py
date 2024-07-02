@@ -27,7 +27,7 @@ def contador(i, f, p):
 contador(1, 10, 1)
 contador(10, 0, 2)
 print('-=' * 25)
-print('Agora é sua vez de personalizar a contagem:')
+print('Chegou a sua vez de personalizar a contagem:')
 ini = int(input('Início: '))
 fim = int(input('Fim: '))
 pas = int(input('Passo: '))
