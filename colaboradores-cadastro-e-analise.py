@@ -10,19 +10,19 @@ while True:
     pessoa.clear()
     pessoa['nome'] = str(input('Nome: '))
     while True:
-        pessoa['sexo'] = str(input('Sexo: [M/F] ')).upper()[0]
-        if pessoa['sexo'] in 'MF':
+        pessoa['sexo'] = str(input('Sexo: [M/F] '))
+        if pessoa['sexo'] in 'MmFf':
             break
         print('ERRO! Por favor, digite apenas M ou F.')
     pessoa['idade'] = int(input('Idade: '))
     soma += pessoa['idade']
     colaboradores.append(pessoa.copy())
     while True:
-        resp = str(input('Quer continuar? [S/N] ')).upper()[0]
-        if resp in 'SN':
+        resp = str(input('Quer continuar? [S/N] '))
+        if resp in 'SsNn':
             break
         print('ERRO! Responda apenas S ou N ')
-    if resp == 'N':
+    if resp in 'Nn':
         break
 lin()
 print(f'Ao todo temos {len(colaboradores)} colaboradores cadastradas.')
