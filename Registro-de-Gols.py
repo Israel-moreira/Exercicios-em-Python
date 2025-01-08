@@ -4,30 +4,33 @@ dados = {}
 def lin():
     print('-' * 60)
 
-
 while True:
     dados.clear()
-    jogador = dados['Jogador'] = str(input('Jogador: '))
+    jogador = input('Jogador: ').strip()
     partidas = int(input(f'Quantas partidas {jogador} jogou? '))
     golsporpartida = []
     tot = 0
+    
     if partidas > 0:
-        for c in range(0, partidas):
-            gols = int(input(f'Quantos gols na partida {c+1}: '))
+        for c in range(1, partidas + 1):
+            gols = int(input(f'Quantos gols na partida {c}: '))
             golsporpartida.append(gols)
             tot += gols
-    else:
-        dados['Gols'] = 0
-    dados['Gols'] = golsporpartida
+    dados['Jogador'] = jogador
+    dados['Gols'] = golsporpartida if partidas > 0 else [0]
     dados['Total'] = tot
+    
     time.append(dados.copy())
+    
     while True: 
-        resp = str(input('Quer continuar [S/N] ')).upper()[0]
-        if resp in 'SN':
+        resp = input('Quer continuar [S/N]? ').strip().upper()
+        if resp in ['S', 'N']:
             break
         print('ERRO! Responda apenas S ou N.')
+
     if resp == 'N':
         break
+
 lin()
 print('cod ', end='')
 for i in dados.keys():
